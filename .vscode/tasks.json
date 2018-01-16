@@ -1,0 +1,105 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Code",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "/home/anas/Documents/RplaceBackgroud/Source.cpp",
+                "-o",
+                "replace",
+                "-I~/bin/OpenCV/include/opencv",
+                "-I~/bin/OpenCV/include",
+                "-I.",
+                "-L~/bin/OpenCV/lib",
+                "-lreplacebackground",
+                "-lopencv_shape",
+                "-lopencv_stitching",
+                "-lopencv_objdetect",
+                "-lopencv_superres",
+                "-lopencv_videostab",
+                "-lopencv_calib3d",
+                "-lopencv_features2d",
+                "-lopencv_highgui",
+                "-lopencv_videoio",
+                "-lopencv_imgcodecs",
+                "-lopencv_video",
+                "-lopencv_photo",
+                "-lopencv_ml",
+                "-lopencv_imgproc",
+                "-lopencv_flann",
+                "-lopencv_core",
+                "-lQt5Core",
+                "-licui18n",
+                "-licuuc",
+                "-licudata"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile Library",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-static",
+                "-c",
+                "./library/replace_background.cpp",
+                "-o",
+                "./library/replace_background.o",
+                "-I~/bin/OpenCV/include/opencv",
+                "-I~/bin/OpenCV/include",
+                "-L~/bin/OpenCV/lib",
+                "-lopencv_shape",
+                "-lopencv_stitching",
+                "-lopencv_objdetect",
+                "-lopencv_superres",
+                "-lopencv_videostab",
+                "-lopencv_calib3d",
+                "-lopencv_features2d",
+                "-lopencv_highgui",
+                "-lopencv_videoio",
+                "-lopencv_imgcodecs",
+                "-lopencv_video",
+                "-lopencv_photo",
+                "-lopencv_ml",
+                "-lopencv_imgproc",
+                "-lopencv_flann",
+                "-lopencv_core",
+                "-lQt5Core",
+                "-licui18n",
+                "-licuuc",
+                "-licudata"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Create Library",
+            "type": "shell",
+            "command": "ar",
+            "args": [
+                "rcs",
+                "./library/libreplacebackground.a",
+                "./library/replace_background.o"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+
+
+
+
