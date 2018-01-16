@@ -45,7 +45,7 @@ void printScreenPixels(Mat frame)
 
 int main()
 {
-    string filename = "The.mkv";
+    string filename = "videos/The.mkv";
     VideoCapture cam(0);
     VideoCapture video(filename);
     Mat frame, video_frame, result;
